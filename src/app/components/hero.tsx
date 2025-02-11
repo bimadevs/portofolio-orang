@@ -7,7 +7,7 @@ export default function Hero() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2 space-y-6">
             <h1 className="text-6xl font-bold leading-tight">
-              Hello, I'm <span className="gradient-text">Timothy</span>
+              Hello, I&apos;m <span className="gradient-text">Timothy</span>
             </h1>
             <p className="text-2xl text-gray-600">
               <span className="gradient-text">Technology Enthusiast</span>

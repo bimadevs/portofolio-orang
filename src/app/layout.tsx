@@ -1,6 +1,5 @@
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'aos/dist/aos.css'
-import AOS from 'aos'
 import 'aos/dist/aos.css'
 import './globals.css'
 import { Toaster } from 'sonner'
