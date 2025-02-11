@@ -1,5 +1,6 @@
 import { WorkManager } from './components/work-manager'
 import { SkillManager } from './components/skill-manager'
+import { AchievementManager } from './components/achievement-manager'
 
 export default function AdminPage() {
   return (
@@ -13,9 +14,15 @@ export default function AdminPage() {
       </div>
 
       {/* Skills Manager */}
-      <div>
+      <div className="mb-12">
         <h2 className="text-2xl font-bold mb-6">Manage Skills</h2>
         <SkillManager />
+      </div>
+
+      {/* Achievements Manager */}
+      <div>
+        <h2 className="text-2xl font-bold mb-6">Manage Achievements</h2>
+        <AchievementManager />
       </div>
     </div>
   )

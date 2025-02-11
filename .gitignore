@@ -1,0 +1,27 @@
+# Next.js build dan cache
+.next
+out
+.cache
+
+# Node modules
+node_modules
+
+# File environment
+.env
+.env.local
+.env.development.local
+.env.production.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun-error.log*
+
+# Editor & sistem file
+.DS_Store
+Thumbs.db
+
+# Deployment folders
+.vercel
+.netlify
