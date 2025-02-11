@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import { supabase } from '../lib/supabase'
+import { unstable_noStore as noStore } from 'next/cache'
+
 
 interface Achievement {
     id: string
@@ -11,6 +13,8 @@ interface Achievement {
 }
 
 async function getAchievements() {
+  // Disable caching untuk fungsi ini
+  noStore()
     const { data, error } = await supabase
         .from('achievements')
         .select('*')

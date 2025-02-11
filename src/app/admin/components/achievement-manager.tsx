@@ -84,6 +84,8 @@ export function AchievementManager() {
                 }])
 
             if (insertError) throw insertError
+            // Revalidate setelah berhasil insert
+            await fetch('/api/revalidate?path=/')
 
             toast.success('Achievement added successfully')
             resetForm()
@@ -122,6 +124,8 @@ export function AchievementManager() {
                     .from('images')
                     .remove([`achievements/${filePath}`])
             }
+            // Revalidate setelah berhasil delete
+            await fetch('/api/revalidate?path=/')
 
             toast.success('Achievement deleted successfully')
             await fetchAchievements()
