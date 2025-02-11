@@ -64,8 +64,7 @@ export default async function Work() {
 
         <div className="mt-20">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Skills & Technologies</h2>
-            <p className="text-gray-600">Tools and technologies I work with</p>
+            <h2 className="text-4xl font-bold mb-4">Skills</h2>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

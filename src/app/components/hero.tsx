@@ -5,7 +5,7 @@ export default function Hero() {
     <section id="home" className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="md:w-1/2 space-y-6" data-aos="fade-right">
+          <div className="md:w-1/2 space-y-6">
             <h1 className="text-6xl font-bold leading-tight">
               Hello, I'm <span className="gradient-text">Timothy</span>
             </h1>
@@ -32,7 +32,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="md:w-1/2" data-aos="fade-left">
+          <div className="md:w-1/2">
             <div className="relative">
               <div className="w-80 h-80 mx-auto rounded-full overflow-hidden border-8 border-white shadow-xl animate-float">
                 <Image 

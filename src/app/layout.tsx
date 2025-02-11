@@ -1,5 +1,7 @@
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import 'aos/dist/aos.css'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import './globals.css'
 import { Toaster } from 'sonner'
 
@@ -23,6 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+      <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer />
       </head>
       <body className={`${poppins.className} bg-gray-50`}>{children}
