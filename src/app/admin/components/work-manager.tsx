@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { toast } from 'sonner'
+import { revalidatePath } from 'next/cache'
+
 
 interface Work {
   id: string
@@ -48,6 +50,8 @@ export function WorkManager() {
         .insert([{ title, icon, description }])
 
       if (error) throw error
+      // Revalidate setelah berhasil update
+      await fetch('/api/revalidate?path=/')
 
       toast.success('Work added successfully')
       // Reset form
@@ -71,6 +75,8 @@ export function WorkManager() {
         .match({ id })
 
       if (error) throw error
+      // Revalidate setelah berhasil delete
+      await fetch('/api/revalidate?path=/')
 
       toast.success('Work deleted successfully')
       await fetchWorks()

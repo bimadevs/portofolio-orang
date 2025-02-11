@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import { supabase } from '../lib/supabase'
+import { unstable_noStore as noStore } from 'next/cache'
+
 
 interface WhatIDo {
   id: string
@@ -16,6 +18,8 @@ interface Skill {
 }
 
 async function getWhatIDo() {
+  // Disable caching untuk fungsi ini
+  noStore()
   const { data, error } = await supabase
     .from('what_i_do')
     .select('*')
@@ -26,6 +30,8 @@ async function getWhatIDo() {
 }
 
 async function getSkills() {
+  // Disable caching untuk fungsi ini
+  noStore()
   const { data, error } = await supabase
     .from('skills')
     .select('*')
@@ -71,7 +77,7 @@ export default async function Work() {
             {skills.map((skill) => (
               <div key={skill.id} className="p-6 bg-white border border-gray-200 rounded-lg hover:border-[#4ECDC4] transition-colors group cursor-pointer shadow-sm hover:shadow-md">
                 <div className="flex items-center gap-4">
-                  <Image 
+                  <Image
                     src={skill.image_url}
                     alt={skill.name}
                     width={40}
