@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { supabase } from '../lib/supabase'
+import { unstable_noStore as noStore } from 'next/cache'
 
 interface Project {
     id: string
@@ -11,6 +12,8 @@ interface Project {
 }
 
 async function getProjects() {
+  // Disable caching untuk fungsi ini
+  noStore()
     const { data, error } = await supabase
         .from('projects')
         .select('*')

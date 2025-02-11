@@ -97,7 +97,8 @@ export function ProjectManager() {
                 }])
 
             if (insertError) throw insertError
-
+            // Revalidate setelah berhasil insert
+            await fetch('/api/revalidate?path=/')
             toast.success('Project added successfully')
             resetForm()
             await fetchProjects()
@@ -135,6 +136,9 @@ export function ProjectManager() {
                     .from('images')
                     .remove([`projects/${filePath}`])
             }
+
+            // Revalidate setelah berhasil delete
+            await fetch('/api/revalidate?path=/')
 
             toast.success('Project deleted successfully')
             await fetchProjects()
